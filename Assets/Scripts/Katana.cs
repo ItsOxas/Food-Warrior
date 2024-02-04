@@ -18,9 +18,10 @@ public class Katana : MonoBehaviour
         rb.MovePosition(worldPos); 
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        print("yikes");
-        Destroy(collision.gameObject);
+        print(":)");
+        var food = other.gameObject.GetComponent<Fruit>();
+        food.Slice();
     }
 }
